@@ -13,18 +13,17 @@ jobs:
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1
 
-      - run: dart pub get
-      - run: dart format --output=none --set-exit-if-changed .
-      - run: dart analyze
-      - run: dart test --reporter json > dart-test-example.json
-      - run: cat dart-test-example.json
+      - name: Build
+        run: |
+          dart pub get
+          dart format --output=none --set-exit-if-changed .
+          dart analyze
+          dart test --reporter json > dart-test-example.json
 
-      - name: Collect test results
+      - name: Collect events
         uses: buildnote/action@main
         env:
           BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
           BUILDNOTE_GITHUB_JOB_NAME: build-and-test
           BUILDNOTE_GITHUB_TOKEN: ${{secrets.BUILDNOTE_GITHUB_TOKEN}}
-        with:
-          verbose: true
         if: always()
