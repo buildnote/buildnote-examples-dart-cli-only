@@ -35,3 +35,4 @@ doc/api/
 .flutter-plugins-dependencies
 
 out
+dart-test-example.json
