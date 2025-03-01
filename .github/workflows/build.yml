@@ -6,10 +6,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    env:
-      BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
-      BUILDNOTE_GITHUB_JOB_NAME: build-and-test
-      BUILDNOTE_GITHUB_TOKEN: ${{secrets.BUILDNOTE_GITHUB_TOKEN}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
@@ -24,4 +20,10 @@ jobs:
 
       - name: Collect test results
         uses: buildnote/action@main
+        env:
+          BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
+          BUILDNOTE_GITHUB_JOB_NAME: build-and-test
+          BUILDNOTE_GITHUB_TOKEN: ${{secrets.BUILDNOTE_GITHUB_TOKEN}}
+        with:
+          verbose: true
         if: always()
