@@ -1,0 +1,12 @@
+{
+  "collect": {
+    "githubAction": {
+      "enabled":true
+    },
+    "dart": {
+      "include": [
+        "**/dart-test*.json"
+      ]
+    }
+  }
+}

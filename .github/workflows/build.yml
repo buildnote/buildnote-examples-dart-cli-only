@@ -19,7 +19,7 @@ jobs:
       - run: dart pub get
       - run: dart format --output=none --set-exit-if-changed .
       - run: dart analyze
-      - run: dart test
+      - run: dart test --reporter json >> out/dart-test-example.json
 
       - name: Collect test results
         uses: buildnote/action@main
