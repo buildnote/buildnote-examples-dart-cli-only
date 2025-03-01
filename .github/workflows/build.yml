@@ -9,6 +9,7 @@ jobs:
     env:
       BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
       BUILDNOTE_GITHUB_JOB_NAME: build-and-test
+      BUILDNOTE_GITHUB_TOKEN: ${{secrets.BUILDNOTE_GITHUB_TOKEN}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
