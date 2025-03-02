@@ -5,8 +5,7 @@
     },
     "dart": {
       "include": [
-        "*/dart-test*.json",
-        "**/dart-test*.json"
+        "*/dart-test*.json"
       ]
     }
   }
