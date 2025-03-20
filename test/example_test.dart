@@ -9,4 +9,8 @@ void main() {
   test('true is not false', () {
     expect(true, isFalse);
   });
+
+  test('another test', () {
+    expect(false, isFalse);
+  });
 }
