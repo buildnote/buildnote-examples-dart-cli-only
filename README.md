@@ -2,7 +2,7 @@
 
 Example use of buildnote in dart project.
 
-The build collects test results and workflow data (via GitHub API) using CLI only.
+The build collects test results and workflow data using CLI only (via GitHub API and personal access token).
 
 This example uses:
 - Buildnote config (`buildnote.json`)
