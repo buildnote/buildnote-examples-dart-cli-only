@@ -28,9 +28,9 @@ jobs:
       - run: dart test --reporter json > dart-test-example.json
 
       - name: Collect tests
-        run: buildnote collect --enabled dart
+        run: buildnote --verbose collect --enabled dart
         if: always()
 
       - name: Collect GitHub events
-        run: buildnote collect --enabled githubAction
+        run: buildnote --verbose collect --enabled githubAction
         if: always()
