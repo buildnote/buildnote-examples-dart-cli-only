@@ -21,7 +21,7 @@ jobs:
       - name: Collect events
         uses: buildnote/action@main
         env:
-          BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
           BUILDNOTE_GITHUB_JOB_NAME: build-and-test
+          BUILDNOTE_API_KEY: ${{ secrets.BUILDNOTE_API_KEY }}
           BUILDNOTE_GITHUB_TOKEN: ${{secrets.BUILDNOTE_GITHUB_TOKEN}}
         if: always()
