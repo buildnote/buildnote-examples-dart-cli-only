@@ -1,12 +1,23 @@
 {
   "collect": {
+
     "githubAction": {
-      "enabled":true
+      "enabled": true,
+      "metadata": {
+        "gh.repository": "{{env.GITHUB_REPOSITORY}}",
+        "gh.run-id": "{{env.GITHUB_RUN_ID}}"
+      }
     },
+
     "dart": {
       "include": [
         "**/dart-test*.json"
-      ]
+      ],
+      "metadata": {}
+    },
+
+    "metadata": {
+      "user": "{{env.USER}}"
     }
   }
 }
