@@ -8,3 +8,4 @@ This example uses:
 - Buildnote config (`buildnote.json`)
 - Buildnote GitHub action
 - Buildnote CLI
+- 
