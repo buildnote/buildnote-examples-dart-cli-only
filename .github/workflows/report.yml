@@ -22,4 +22,5 @@ jobs:
         uses: buildnote/test-reporter@main
         env:
           BUILDNOTE_GITHUB_JOB_NAME: report
+          BUILDNOTE_SLACK_WEBHOOK_URL: ${{secrets.BUILDNOTE_SLACK_WEBHOOK_URL}}
         if: always()

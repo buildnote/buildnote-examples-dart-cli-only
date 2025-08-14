@@ -1,6 +1,5 @@
 {
   "collect": {
-
     "githubAction": {
       "enabled": true,
       "metadata": {
@@ -19,5 +18,14 @@
     "metadata": {
       "user": "{{env.USER}}"
     }
+  },
+  "notify": {
+    "slack": {
+      "enabled": true,
+      "url": "{{env.BUILDNOTE_SLACK_WEBHOOK_URL}}",
+      "condition": "{{successful || failed}}",
+      "title": "Dart tests {{status}} - {{env.GITHUB_WORKFLOW}} - {{env.GITHUB_RUN_ID}} (attempt: {{env.GITHUB_RUN_ATTEMPT}})"
+    }
+
   }
 }
