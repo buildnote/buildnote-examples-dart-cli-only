@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: dart analyze
+      - run: dart test --reporter json > dart-test-example.json
+
+      - name: Report events
+        uses: buildnote/test-reporter@main
+        env:
+          BUILDNOTE_GITHUB_JOB_NAME: report
+        if: always()

@@ -7,5 +7,5 @@ The build collects test results and workflow data using CLI only (via GitHub API
 This example uses:
 - Buildnote config (`buildnote.json`)
 - Buildnote GitHub action
+- Buildnote Test Reporter action
 - Buildnote CLI
-- 
