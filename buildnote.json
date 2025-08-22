@@ -19,7 +19,7 @@
       "user": "{{env.USER}}"
     }
   },
-  "notify": {
+  "report": {
     "slack": {
       "enabled": true,
       "url": "{{env.BUILDNOTE_SLACK_WEBHOOK_URL}}",
